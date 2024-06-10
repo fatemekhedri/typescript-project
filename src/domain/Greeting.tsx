@@ -2,7 +2,7 @@ import React from "react";
 import {  Typography } from "@mui/material";
 
 interface GreetingProps {
-  name: string;
+  name?: string;
 }
 const Greeting: React.FC<GreetingProps> = ({ name }) => {
   interface Flower {
