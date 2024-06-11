@@ -1,6 +1,8 @@
 import React from "react";
-import { Button, Paper, Typography } from "@mui/material";
+import { Button, Paper, Typography, Chip } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Greeting from "./Greeting";
+import ContainerStyle from "./containerStyle";
 const Home: React.FC<{ title: string }> = ({ title }) => {
   const navigate = useNavigate();
   return (
@@ -15,6 +17,10 @@ const Home: React.FC<{ title: string }> = ({ title }) => {
       >
         LogOut
       </Button>
+      <ContainerStyle styles={{ display: "flex", background: "red" }} />
+      <Greeting>
+        <Chip label=" hiii I am from greeting component" />
+      </Greeting>
     </Paper>
   );
 };

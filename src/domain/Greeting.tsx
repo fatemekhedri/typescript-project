@@ -1,10 +1,11 @@
 import React from "react";
-import {  Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 
 interface GreetingProps {
   name?: string;
+  children?: React.ReactNode | string;
 }
-const Greeting: React.FC<GreetingProps> = ({ name }) => {
+const Greeting: React.FC<GreetingProps> = ({ name, children }) => {
   interface Flower {
     kind: "maryam" | "narges" | "rose";
     color: string;
@@ -15,8 +16,16 @@ const Greeting: React.FC<GreetingProps> = ({ name }) => {
     color: "white",
     number: 20,
   };
-  console.log(`alan oomadam interface ha ro namayesh b edam ${maryamFLower.kind}`);
+  console.log(
+    `alan oomadam interface ha ro namayesh b edam ${maryamFLower.kind}`
+  );
 
-  return <Typography variant="h2"> chitoriii {name}</Typography>;
+  return (
+    <Typography>
+      {" "}
+      <Typography variant="h2">chitoriii {name}</Typography>
+      <Typography variant="h4">{children}</Typography>
+    </Typography>
+  );
 };
 export default Greeting;

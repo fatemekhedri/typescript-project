@@ -9,14 +9,15 @@ const Login: React.FC<{}> = () => {
   //   password: string;
   // };
   const navigate = useNavigate();
-  const [email, setEmail] = useState<string>("");
+  const [email, setEmail] = useState<string >("");
   const [password, setPassword] = useState<string>("");
   // const [user, setuser] = useState<AuthUser>({} as AuthUser);
+  // const [user, setuser] = useState<AuthUser | null>(null);
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     console.log("event hass", e.target.value, e.target.name);
     setPassword(e.target.value);
   };
-  
+
   const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e: any) => {
     console.log("eeeeeeee", typeof e);
     e.preventDefault();
@@ -72,7 +73,12 @@ const Login: React.FC<{}> = () => {
             />
           </Grid>
           <Grid item>
-            <Button type="submit" onClick={handleClick} variant="contained">
+            <Button
+              type="submit"
+              color="secondary"
+              onClick={handleClick}
+              variant="contained"
+            >
               Login
             </Button>
           </Grid>
